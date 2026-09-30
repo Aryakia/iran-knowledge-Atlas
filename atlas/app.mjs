@@ -78,16 +78,18 @@ function renderMap() {
     `https://www.openhistoricalmap.org/#map=${state.map === "world" ? 2 : 4}/32/53&date=${state.year}`;
   mapControl = null;
 
-  if (state.map === "regional" || state.map === "world") {
+  if (state.map === "historic") {
+    $("map-surface").innerHTML =
+      `<iframe title="${esc(e.name)} historical map in ${yearLabel(state.year)}" src="https://embed.openhistoricalmap.org/#map=4/32/53&date=${state.year}&layer=O" loading="lazy" referrerpolicy="no-referrer"></iframe><a class="map-fallback" href="https://www.openhistoricalmap.org/#map=4/32/53&date=${state.year}" target="_blank" rel="noopener noreferrer">Open this dated map separately ↗</a>`;
+    $("map-caption").textContent =
+      `${e.name} · ${yearLabel(state.year)}. Interactive dated historical context from OpenHistoricalMap; zoom and pan inside the map. Coverage and boundary precision vary by period.`;
+  } else {
     $("map-surface").innerHTML = geographicMap(geo, state.map);
     mapControl = enableMapPan($("geographic-map"), state.map);
     $("map-caption").textContent =
-      "Modern geographic context from Natural Earth. These boundaries do not represent the selected historical period.";
-  } else {
-    $("map-surface").innerHTML =
-      `<iframe title="OpenHistoricalMap in ${yearLabel(state.year)}" src="https://embed.openhistoricalmap.org/#map=3/32/53&date=${state.year}&layer=O" loading="lazy" referrerpolicy="no-referrer"></iframe><a class="map-fallback" href="https://www.openhistoricalmap.org/#map=3/32/53&date=${state.year}" target="_blank" rel="noopener noreferrer">External map · open separately ↗</a>`;
-    $("map-caption").textContent =
-      `Dated historical context for ${e.short} from OpenHistoricalMap. Community coverage varies by place and date.`;
+      state.map === "regional"
+        ? "Modern regional context from Natural Earth. This is for geographic orientation only and does not represent the selected dynasty's historical borders."
+        : "Modern world context from Natural Earth. This is for orientation only and does not represent the selected dynasty's historical borders.";
   }
 
   for (const id of ["zoom-in", "zoom-out", "map-reset"])
@@ -169,7 +171,7 @@ async function start() {
 
   for (const row of atlas.history) historyByYear.set(row.year, row);
 
-  state = { year: 2026, map: "regional", scenario: scenarios.scenarios[0].id };
+  state = { year: 2026, map: "historic", scenario: scenarios.scenarios[0].id };
 
   $("era-select").innerHTML = atlas.eras
     .map((e) => `<option value="${esc(e.id)}">${esc(e.name)}</option>`)
@@ -188,6 +190,7 @@ async function start() {
   $("era-select").onchange = (ev) => {
     const e = atlas.eras.find((x) => x.id === ev.target.value);
     if (!e) return;
+    state.map = "historic";
     selectYear(Math.round((e.start + Math.min(e.end - 1, 2026)) / 2));
   };
 
@@ -208,8 +211,10 @@ async function start() {
     $(id).onclick = () => {
       const e = activeEra(state.year);
       const next = atlas.eras[atlas.eras.indexOf(e) + direction];
-      if (next)
+      if (next) {
+        state.map = "historic";
         selectYear(Math.round((next.start + Math.min(next.end - 1, 2026)) / 2));
+      }
     };
   }
 
