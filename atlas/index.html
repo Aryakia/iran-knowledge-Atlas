@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Iran Knowledge Atlas: a public historical research showcase with curated evidence and precomputed systems-model scenarios."
+    />
+    <meta name="theme-color" content="#143b36" />
+    <meta property="og:title" content="Iran Knowledge Atlas" />
+    <meta property="og:image" content="./og.png" />
+    <title>Iran Knowledge Atlas | Public Research Showcase</title>
+    <link rel="icon" href="./favicon.svg" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#atlas">Skip to atlas</a>
+    <header class="topbar">
+      <a class="brand" href="#atlas"
+        ><b class="brandmark">IK</b
+        ><span>Iran Knowledge Atlas<small>Public research showcase</small></span></a
+      >
+      <nav aria-label="Main navigation">
+        <a href="#atlas">Atlas</a>
+        <a href="#scenarios">Scenarios</a>
+        <a href="#dossier">People & events</a>
+        <a href="#sources">Evidence</a>
+      </nav>
+      <span class="version">Public distribution</span>
+    </header>
+
+    <main>
+      <div id="status" role="status" class="load-status">Loading the atlas…</div>
+      <div id="application" hidden>
+        <section class="intro">
+          <div>
+            <p class="eyebrow">HISTORICAL SYSTEMS RESEARCH · 700 BCE—2026 CE</p>
+            <h1>Knowledge systems, <em>mapped through time.</em></h1>
+          </div>
+          <p class="introNote">
+            This public site presents historical context and selected precomputed
+            outputs from an exploratory research model. The unpublished research
+            implementation, coefficients, parameter files, event-effect magnitudes,
+            and development history are not distributed with this site.
+          </p>
+        </section>
+
+        <section id="atlas" class="atlas">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Historical atlas</p>
+              <h2>Explore periods, people, events, and reconstructed outputs.</h2>
+              <p>
+                The two displayed indices are model reconstructions, not measured
+                historical IQ or causal estimates.
+              </p>
+            </div>
+            <span class="tag">Assumed indices · uncalibrated</span>
+          </div>
+
+          <div class="toolbar">
+            <label>Historical period<select id="era-select"></select></label>
+            <div class="year-controls">
+              <button id="previous-era" aria-label="Previous era">Previous</button>
+              <label>Selected year
+                <input id="year-number" type="number" min="-700" max="2026" value="2026" />
+              </label>
+              <button id="next-era" aria-label="Next era">Next</button>
+            </div>
+            <div class="era-count">20 periods <span>700 BCE – 2026 CE</span></div>
+          </div>
+
+          <div class="atlas-grid">
+            <div class="map-card">
+              <div class="map-heading">
+                <div>
+                  <p class="eyebrow" id="period-dates"></p>
+                  <h2 id="era-title"></h2>
+                  <p id="era-polities"></p>
+                </div>
+                <span class="tag">Interpretive periodization</span>
+              </div>
+              <div class="map-switch" role="group" aria-label="Map view">
+                <button data-map="regional" aria-pressed="true">Regional context</button>
+                <button data-map="world" aria-pressed="false">World context</button>
+                <button data-map="historic" aria-pressed="false">Dated historical map</button>
+              </div>
+              <div id="map-surface"></div>
+              <div class="map-tools">
+                <button id="zoom-in" aria-label="Zoom map in">+</button>
+                <button id="zoom-out" aria-label="Zoom map out">−</button>
+                <button id="map-reset">Reset view</button>
+                <span>Drag to pan · + / − to zoom</span>
+              </div>
+              <p class="caption" id="map-caption"></p>
+              <a id="map-source" target="_blank" rel="noopener noreferrer">Open dated source map</a>
+            </div>
+
+            <aside class="stock-card">
+              <p class="eyebrow">Published reconstructed outputs</p>
+              <div class="stock-value knowledge">
+                <b id="stock-k"></b>
+                <span>Knowledge capital <small>Index / 100</small></span>
+              </div>
+              <div class="stock-value capability">
+                <b id="stock-g"></b>
+                <span>Societal capability <small>Index / 100</small></span>
+              </div>
+              <p class="note">
+                These are precomputed model outputs. The underlying coefficients,
+                raw driver profiles, and event-effect magnitudes are not included
+                in the public distribution.
+              </p>
+              <p id="era-summary"></p>
+            </aside>
+          </div>
+
+          <div class="timeline">
+            <div>
+              <div class="timeline-label">
+                <label for="year-range">Historical timeline</label>
+                <strong id="year-label"></strong>
+              </div>
+              <input id="year-range" type="range" min="-700" max="2026" value="2026" />
+              <div class="ticks">
+                <span>700 BCE</span><span>1 CE</span><span>1000 CE</span><span>2026 CE</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="history-card">
+            <div class="chart-heading">
+              <div>
+                <h3>The reconstructed long view</h3>
+                <p>
+                  Published outputs from the private research model. They are
+                  illustrative reconstructions, not observations.
+                </p>
+              </div>
+              <div class="legend">
+                <span class="k">Knowledge</span><span class="g">Capability</span>
+              </div>
+            </div>
+            <div id="history-chart"></div>
+          </div>
+        </section>
+
+        <section id="scenarios" class="lab">
+          <div class="section-heading inverse">
+            <div>
+              <p class="eyebrow">PUBLIC SCENARIO GALLERY · 2026 START</p>
+              <h2>Compare selected precomputed trajectories.</h2>
+              <p>
+                The public site intentionally uses precomputed results instead of
+                shipping the executable research model to visitors' browsers.
+              </p>
+            </div>
+            <span class="tag">Exploratory · uncalibrated</span>
+          </div>
+
+          <div class="lab-grid">
+            <aside class="controls">
+              <div class="control-head"><h3>Published scenarios</h3></div>
+              <label>Scenario<select id="scenario-select"></select></label>
+              <p class="caption" id="scenario-description"></p>
+              <div class="note">
+                Full interactive experimentation remains in the private research
+                environment. A future private API can restore richer interaction
+                without exposing the implementation.
+              </div>
+            </aside>
+
+            <div class="lab-results">
+              <div class="result-heading">
+                <div>
+                  <h3 id="scenario-title"></h3>
+                  <p id="scenario-context"></p>
+                </div>
+              </div>
+              <div class="legend">
+                <span class="k">Knowledge capital</span>
+                <span class="g">Societal capability</span>
+              </div>
+              <div id="scenario-chart"></div>
+              <div class="result-kpis" id="result-kpis"></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="dossier">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Era dossier</p>
+              <h2 id="dossier-title"></h2>
+            </div>
+            <label>Find an event or scholar
+              <input id="dossier-search" type="search" placeholder="Name, topic, or event" />
+            </label>
+          </div>
+          <div class="dossier-grid">
+            <div>
+              <h3>Events and institutions <span id="event-count"></span></h3>
+              <p class="caption">
+                Public historical descriptions omit the private numerical event-effect assumptions.
+              </p>
+              <div id="event-list"></div>
+            </div>
+            <div>
+              <h3>Scholars and knowledge-makers <span id="scholar-count"></span></h3>
+              <p class="caption">
+                Illustrative intellectual networks; era grouping does not imply modern nationality.
+              </p>
+              <div id="scholar-list"></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="sources">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Evidence and interpretation</p>
+              <h2>Public evidence, private implementation.</h2>
+              <p>
+                Historical descriptions and source links are visible here. The
+                research implementation is retained privately while the project is
+                under development.
+              </p>
+            </div>
+          </div>
+          <div class="evidence-cards">
+            <article>
+              <small>Public</small>
+              <h3>Historical record</h3>
+              <p>Period descriptions, events, biographies, maps, and source links.</p>
+            </article>
+            <article>
+              <small>Public</small>
+              <h3>Selected outputs</h3>
+              <p>Reconstructed stock histories and selected precomputed scenario trajectories.</p>
+            </article>
+            <article>
+              <small>Private</small>
+              <h3>Research implementation</h3>
+              <p>Equations, coefficients, parameter files, raw driver profiles, event-effect magnitudes, sensitivity code, Python implementation, tests, and development history.</p>
+            </article>
+          </div>
+          <div id="source-list" class="sources-grid"></div>
+          <details>
+            <summary>Research limitations</summary>
+            <p>
+              The model remains exploratory and uncalibrated. Published outputs
+              are not forecasts, direct measurements, psychometric IQ estimates,
+              or identified causal effects.
+            </p>
+          </details>
+        </section>
+
+        <footer>
+          <p><strong>Iran Knowledge Atlas</strong><br />Research concept · Arya Kia</p>
+          <p>Public distribution<br />Research implementation retained privately</p>
+          <div><a href="#sources">Evidence & limitations</a></div>
+        </footer>
+      </div>
+    </main>
+
+    <noscript>This public atlas requires JavaScript for interactive navigation.</noscript>
+    <script type="module" src="./app.mjs"></script>
+  </body>
+</html>
