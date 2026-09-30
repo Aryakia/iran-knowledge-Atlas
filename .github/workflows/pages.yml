@@ -1,4 +1,4 @@
-name: Deploy showcase to GitHub Pages
+name: Deploy showcase and audited atlas to GitHub Pages
 
 on:
   push:
@@ -6,13 +6,13 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   deploy:
@@ -22,11 +22,45 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Import audited public-only atlas artifact
+        env:
+          ATLAS_URL: "https://sdmntpreastus.oaiusercontent.com/files/00000000-a3b8-81f9-88cd-8740e55bfebe/raw?se=2026-09-30T07%3A34%3A39Z&sp=r&sv=2026-02-06&sr=b&scid=16b28774-bb50-5d27-a41a-edcadbbb8977&skoid=2d2fbb03-9efb-4ad0-a91c-1db2f5a47997&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-30T05%3A41%3A02Z&ske=2026-10-01T05%3A41%3A02Z&sks=b&skv=2026-02-06&sig=BMSaTZSr2TCOa25kFmjJEjVWsmbicDxY1hLYxxBGsC4%3D"
+        run: |
+          set -euo pipefail
+          curl --fail --location --silent --show-error "$ATLAS_URL" -o "$RUNNER_TEMP/atlas.zip"
+          echo "d7a12eb23573245f2cbfc72a634b9f9d04df51270c626ac75e61aa2ed2fc5228  $RUNNER_TEMP/atlas.zip" | sha256sum -c -
+          rm -rf "$RUNNER_TEMP/public-atlas" atlas
+          mkdir -p "$RUNNER_TEMP/public-atlas" atlas
+          unzip -q "$RUNNER_TEMP/atlas.zip" -d "$RUNNER_TEMP/public-atlas"
+          rsync -a --exclude='.github/' --exclude='README.md' "$RUNNER_TEMP/public-atlas/" atlas/
+
+      - name: Persist only the audited public distribution
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add atlas
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish audited public atlas [skip ci]"
+            git push
+          fi
+
       - uses: actions/configure-pages@v5
         with:
           enablement: true
+
+      - name: Stage Pages site
+        run: |
+          rm -rf _site
+          mkdir -p _site
+          cp index.html _site/index.html
+          cp -R docs _site/docs
+          cp -R atlas _site/atlas
+          touch _site/.nojekyll
+
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: "."
+          path: "_site"
+
       - id: deployment
         uses: actions/deploy-pages@v4
