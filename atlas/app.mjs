@@ -65,7 +65,7 @@ function renderHistory() {
     marker: state.year + 700,
     formatX: (x) => yearLabel(Math.round(x - 700) || 1),
     label:
-      "Published reconstructed knowledge and societal capability outputs, 700 BCE to 2026 CE",
+      "Published reconstructed knowledge and realized knowledge capability outputs, 700 BCE to 2026 CE",
   });
 }
 
@@ -153,7 +153,7 @@ function renderScenario() {
   const deltaG = last.capability - first.capability;
   $("result-kpis").innerHTML =
     `<article><span>Knowledge at +${scenarios.horizonYears}</span><b class="knowledge">${last.knowledge.toFixed(1)}</b><small>${deltaK >= 0 ? "+" : ""}${deltaK.toFixed(1)} from start</small></article>` +
-    `<article><span>Capability at +${scenarios.horizonYears}</span><b class="capability">${last.capability.toFixed(1)}</b><small>${deltaG >= 0 ? "+" : ""}${deltaG.toFixed(1)} from start</small></article>`;
+    `<article><span>Realized capability at +${scenarios.horizonYears}</span><b class="capability">${last.capability.toFixed(1)}</b><small>${deltaG >= 0 ? "+" : ""}${deltaG.toFixed(1)} from start</small></article>`;
 }
 
 async function start() {
