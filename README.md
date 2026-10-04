@@ -110,4 +110,3 @@ The public repository focuses on the project purpose, conceptual structure, hist
 ## Author
 
 **Arya Kia**  
-System Dynamics · historical modeling · knowledge systems
