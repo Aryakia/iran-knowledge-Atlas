@@ -1,27 +1,27 @@
-# Iran IQ & Knowledge Through Time — Public Showcase
+# Iran Knowledge Atlas
 
-**An exploratory historical System Dynamics model of knowledge capital and realized societal cognitive capability across roughly 2,700 years of Iranian history.**
+**A public research showcase for an exploratory System Dynamics model of knowledge accumulation and societal capability across roughly 2,700 years of Iranian history.**
 
-[View the conceptual model diagram and evidence boundaries](docs/VISUAL_CASE_STUDY.md) · [Public case-study page](index.html)
+[**Open the live Iran Knowledge Atlas →**](https://aryakia.github.io/iran-knowledge-Atlas/)  
+[Conceptual model and evidence boundaries](docs/VISUAL_CASE_STUDY.md)
+
+> **Interpretation note:** This project is a model, not a historical IQ dataset. Historical index values are proxy-based reconstructions and scenario assumptions. They are not observed measures of inherited intelligence, ethnic ability, or a basis for ranking populations.
+
+## About the project
+
+The **Iran Knowledge Atlas** is the public-facing presentation of the working research model **Iran IQ & Knowledge Through Time**. The project explores how knowledge accumulation and the societal conditions for developing and realizing human capability may evolve when education, health, institutions, trade, migration, geography, political stability, conflict, and cultural disruption interact over long historical periods.
+
+The purpose of the public repository is to make the research question, conceptual structure, historical context, assumptions, and limitations understandable without publishing the full private working model or presenting exploratory outputs as established historical measurements.
 
 | | |
 |---|---|
+| **Live site** | [aryakia.github.io/iran-knowledge-Atlas](https://aryakia.github.io/iran-knowledge-Atlas/) |
 | **Project type** | System Dynamics · historical modeling · knowledge systems |
 | **Role** | Creator and model developer |
 | **Status** | Exploratory research prototype · version 0.4 working model |
 | **Modeled horizon** | Approximately 2,700 years |
 | **Canonical model** | Private research repository |
-| **Public disclosure** | Model purpose, structure, aggregate counts, assumptions, and limitations only |
-
----
-
-## Critical interpretation note
-
-**This project is a model, not a historical IQ dataset.**
-
-Direct national IQ measurements do not exist for most of the timeline. Historical index values are proxy-based reconstructions and scenario assumptions. They are **not** observed measures of inherited intelligence, ethnic ability, or a basis for ranking populations.
-
-The project is better understood as an exploratory model of how **knowledge accumulation and the societal conditions for realizing cognitive potential** may change over long historical periods.
+| **Public repository** | Research overview, public atlas, model structure, assumptions, and limitations |
 
 ## Current working-model scope
 
@@ -56,11 +56,11 @@ Represents a modeled societal capability shaped by enabling conditions such as h
 
 ### Historical context layer
 
-Political periods, events, scholars, and geographic context provide a structured evidence layer around the model. They help explain why parameters or shocks might differ across eras without pretending that historical narratives are direct measurements of the stocks.
+Political periods, events, scholars, and geographic context provide a structured evidence layer around the model. They help explain why parameters or shocks might differ across eras without treating historical narratives as direct measurements of the stocks.
 
 ### Asymmetric conflict mechanism
 
-The working model distinguishes **persistent conflict pressure** from **catastrophic state breach/invasion**. This allows chronic instability and severe disruption to have different dynamic effects rather than representing all war as one undifferentiated variable.
+The working model distinguishes **persistent conflict pressure** from **catastrophic state breach/invasion**. This allows chronic instability and severe disruption to have different dynamic effects rather than representing all conflict as one undifferentiated variable.
 
 ## Drivers explored
 
@@ -75,13 +75,13 @@ The model can represent hypotheses involving:
 - political stability
 - chronic warfare
 - catastrophic invasion
-- destruction or preservation of cultural/knowledge infrastructure
+- destruction or preservation of cultural and knowledge infrastructure
 
 ## Why System Dynamics
 
 Long-run knowledge development is path-dependent. Stocks accumulate gradually, while disruption can have delayed effects that persist after the original shock. Institutional strength, education, health, migration, and knowledge creation can create reinforcing or balancing feedback across generations.
 
-System Dynamics is useful here because it forces those hypotheses into an explicit causal and stock–flow structure rather than leaving them as an informal historical narrative.
+System Dynamics is useful here because it requires those hypotheses to be represented through an explicit causal and stock-flow structure rather than remaining only an informal historical narrative.
 
 ## Research status and limitations
 
@@ -103,7 +103,9 @@ A future research version would require careful calibration, sensitivity testing
 
 ## Public/private boundary
 
-This showcase does **not** publish the detailed equations, coefficients, working datasets, calibration experiments, unpublished historical coding decisions, private notes, credentials, or internal development files. The public repository presents the research question, structure, aggregate model scope, and interpretation safeguards.
+This repository does **not** publish the detailed equations, coefficients, working datasets, calibration experiments, unpublished historical coding decisions, private notes, credentials, or internal development files.
+
+The public repository focuses on the project purpose, conceptual structure, historical evidence layer, aggregate model scope, interpretation safeguards, and the interactive public atlas.
 
 ## Author
 
