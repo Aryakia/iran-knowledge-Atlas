@@ -1,6 +1,6 @@
 # Iran Knowledge Atlas
 
-**A public research showcase for an exploratory System Dynamics model of knowledge accumulation and societal capability across roughly 2,700 years of Iranian history.**
+**A public research showcase for an exploratory System Dynamics model of knowledge accumulation and realized knowledge capability across roughly 2,700 years of Iranian history.**
 
 [**Open the live Iran Knowledge Atlas →**](https://aryakia.github.io/iran-knowledge-Atlas/)  
 [Conceptual model and evidence boundaries](docs/VISUAL_CASE_STUDY.md)
@@ -18,7 +18,7 @@ The purpose of the public repository is to make the research question, conceptua
 | **Live site** | [aryakia.github.io/iran-knowledge-Atlas](https://aryakia.github.io/iran-knowledge-Atlas/) |
 | **Project type** | System Dynamics · historical modeling · knowledge systems |
 | **Role** | Creator and model developer |
-| **Status** | Exploratory research prototype · version 0.4 working model |
+| **Status** | Exploratory research prototype · version 0.6 working model |
 | **Modeled horizon** | Approximately 2,700 years |
 | **Canonical model** | Private research repository |
 | **Public repository** | Research overview, public atlas, model structure, assumptions, and limitations |
@@ -31,7 +31,7 @@ The private research prototype currently contains:
 - **20 modeled political periods**
 - **55 historical events**
 - **36 sourced scholar profiles**
-- coupled **Knowledge Capital (`K`)** and **General Cognitive Capability (`G`)** stocks
+- coupled **Knowledge Capital (`K`)** and **Realized Knowledge Capability (`G`, legacy internal symbol)** stocks
 - regional illustrative extents with dated OpenHistoricalMap context
 - an asymmetric invasion mechanism separating chronic conflict from catastrophic state breach
 - explicit equations, parameters, evidence classes, and documented limitations in the working model
@@ -50,9 +50,9 @@ The model does not assume that one factor determines the trajectory. It is desig
 
 Represents accumulated societal knowledge and intellectual capacity as a modeled stock. It can grow through knowledge creation, preservation, education, exchange, and institutional continuity, while disruption or destruction can erode the stock or slow its accumulation.
 
-### General Cognitive Capability (`G`)
+### Realized Knowledge Capability (`G`, legacy internal symbol)
 
-Represents a modeled societal capability shaped by enabling conditions such as health, education, institutions, and the ability to access and use accumulated knowledge. It is not a biological intelligence measure.
+Represents a modeled realized knowledge capability shaped by enabling conditions such as health, education, institutions, and the ability to access and use accumulated knowledge. It is not a biological intelligence measure.
 
 ### Historical context layer
 
@@ -85,7 +85,7 @@ System Dynamics is useful here because it requires those hypotheses to be repres
 
 ## Research status and limitations
 
-Version 0.4 is **uncalibrated and exploratory**. It is intended for:
+Version 0.6 is **uncalibrated and exploratory**. It is intended for:
 
 - hypothesis development
 - structural reasoning
