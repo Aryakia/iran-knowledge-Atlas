@@ -6,7 +6,7 @@
 
 ```mermaid
 flowchart LR
-  A[Education, health and institutional conditions] --> B[Modeled societal capability G]
+  A[Education, health and institutional conditions] --> B[Modeled realized knowledge capability G]
   C[Knowledge creation, preservation and exchange] --> D[Modeled knowledge capital K]
   D -->|Hypothesized support| B
   B -->|Hypothesized support| D
@@ -26,7 +26,7 @@ This is an explanatory schematic based on the **published high-level model descr
 | --- | --- | --- |
 | Documentary source | A historical event, scholar record or period has a cited provenance in the working source registry. | A source record alone cannot measure a national cognitive stock. |
 | Proxy / classification | Researcher-defined translation of uneven historical evidence into model inputs. | A proxy is not a direct observation or a population-level IQ measurement. |
-| Structural assumption | An hypothesized relationship between societal conditions, knowledge capital `K` and modeled capability `G`. | The relationship is not identified causally simply because the model contains an arrow. |
+| Structural assumption | An hypothesized relationship between societal conditions, knowledge capital `K` and Realized Knowledge Capability `G`. | The relationship is not identified causally simply because the model contains an arrow. |
 | Scenario input | A conditional choice of event severity or other assumptions. | It is not an independently verified historical counterfactual. |
 | Simulation output | A computed path conditional on the chosen structure and coefficients. | It is not an observed historical series, a calibrated forecast or a ranking of peoples. |
 
@@ -34,7 +34,7 @@ This is an explanatory schematic based on the **published high-level model descr
 
 ## Public research snapshot and release boundary
 
-The [README](../README.md) reports a 2,700-year contextual timeline, 20 modeled periods, 55 events, 36 sourced scholar profiles and v0.4 exploratory status. Those counts are a version-specific catalogue snapshot, not a validated numerical history. Do not copy private equations, unpublished coefficients or source datasets into this public repository without a separate release decision.
+The [README](../README.md) reports a 2,700-year contextual timeline, 20 modeled periods, 55 events, 36 sourced scholar profiles and v0.6 exploratory status. Those counts are a version-specific catalogue snapshot, not a validated numerical history. Do not copy private equations, unpublished coefficients or source datasets into this public repository without a separate release decision.
 
 ## Actual screenshots
 
@@ -42,7 +42,7 @@ No real simulation screenshot has been captured in this change. A later capture 
 
 ## GitHub About fields — proposed, not applied
 
-- **Description:** `Exploratory System Dynamics research on knowledge capital and societal capability across historical scenarios.`
+- **Description:** `Exploratory System Dynamics research on knowledge capital and realized knowledge capability across historical scenarios.`
 - **Topics:** `system-dynamics`, `knowledge-systems`, `historical-modeling`, `simulation`, `research-prototype`
 - **Homepage:** leave blank until a safe, verified public demonstration exists.
 
