@@ -1,21 +1,26 @@
 {
-  "publicSchemaVersion": 1,
-  "sourceRevision": "dc7dcae1c47e0fc01b491dc8a41dec6027188629",
+  "publicSchemaVersion": 2,
+  "projectVersion": "0.7.0",
+  "sourceRevision": "7e0ef964b6010c67c405031e549a88bf0a6668bd",
+  "title": "Iran Knowledge Atlas",
+  "framing": "knowledge-system resilience",
   "generatedFromPrivateRepository": true,
   "researchImplementationIncluded": false,
-  "publicationPolicy": "Only public-facing descriptions, citations, maps, precomputed stock histories, and precomputed scenario trajectories are distributed.",
+  "publicationPolicy": "Only public-facing descriptions, citations, maps, precomputed stock histories, named scenario outputs, structural-sensitivity envelopes, and generic presentation code are distributed.",
   "files": {
     ".github/workflows/pages.yml": "ce200c170664f611bd24db644e30b9556861084272172551690ccdb0d2d91cbc",
-    "README.md": "7a956802e6588380e5daf8a27a48284d1077b222cebb708a0908760f22b4a63e",
-    "app.mjs": "1a0197fd0a01cf71a9de9f35c7bcf63f4dd0a2679583e80a972bc15aa8886b4e",
-    "charts.mjs": "6ca8921540288de8d4eac0bbb297ef4e6db912ecf559fb1dd73660158a8282ac",
+    "README.md": "5d4230f9c5441d5f03a651cf954fe37d2323dc3206708adcd087a958da2ca7eb",
+    "app.mjs": "e71741472c076e7c49b5cc3463d3711311b5557c9a903ccd8a9a0b621febb227",
+    "charts.mjs": "28b4c2052d530fa67196771a4071560bc82c2c82e512320e6d484ac72ed29da7",
     "data/maps/modern-context.geojson": "c92dc2983ed235fa2652e0c691c5e01afd008f444a5e4ceb3f4f1e89864d28ab",
-    "data/public-atlas.json": "61c6add09716c0edd3e3553c43c573cdec0a261838ff2951bd188d6db1101900",
-    "data/public-scenarios.json": "eb2b9b5cc92d6ff5428bc66c99c870352e40301c9ddfe17bd8f437e3834f042c",
+    "data/public-atlas.json": "6f25ce9b1fb9a3ec14bf87a5fba2bdb8f2db2cd913342df183baa0fceb404484",
+    "data/public-release.json": "ce58662788cc3b01b60029d606ea5cb49e5d8d2a883305b00af00f480e17e02c",
+    "data/public-scenarios.json": "4b1648fb606762f1a5c9e4ae479c2937af65c85eabb3f62c7ec29c49aa6e4d6a",
     "favicon.svg": "e6d2e59b7b5bbb0342e0fb496dfc262decbfe4426bbb7b047aec8d467d1dc6f7",
-    "index.html": "486200b15b80b3a4e41c52185ad423c5fa4adfa5159ba0fb5ee372da0d7e4e14",
+    "index.html": "a021b17f4f7c13f1c7e4579dd888883ab3da12404a3760b9029324101767914e",
     "maps.mjs": "2511560b462a5ee3467a1f28231c3cdf849b84001b6464e35391263b7ca762d0",
     "og.png": "5e62aa0f809f1e5109c2d63b4d0f5559fb9f8eba806c709c9b7b34f99d73c1e9",
-    "styles.css": "ca1d21f2ef157e4a06ec944860d3897112c863d3a4ba608de7ce106224395717"
+    "styles.css": "ca1d21f2ef157e4a06ec944860d3897112c863d3a4ba608de7ce106224395717",
+    "v07.css": "764ec244bc858207aeb4fdc1ab3a7a04609f58a065ee989505adfcac16280b63"
   }
 }

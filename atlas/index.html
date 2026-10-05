@@ -5,58 +5,81 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta
       name="description"
-      content="Iran Knowledge Atlas: a public historical research showcase with curated evidence and precomputed systems-model scenarios."
+      content="Iran Knowledge Atlas: an exploratory System Dynamics research platform on knowledge-system accumulation, disruption and recovery across Iranian and Persianate history."
     />
     <meta name="theme-color" content="#143b36" />
     <meta property="og:title" content="Iran Knowledge Atlas" />
+    <meta property="og:description" content="Evidence, historical reconstruction and System Dynamics experiments on knowledge-system resilience." />
     <meta property="og:image" content="./og.png" />
-    <title>Iran Knowledge Atlas | Public Research Showcase</title>
+    <title>Iran Knowledge Atlas | Knowledge-System Resilience</title>
     <link rel="icon" href="./favicon.svg" />
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./v07.css" />
   </head>
   <body>
     <a class="skip" href="#atlas">Skip to atlas</a>
     <header class="topbar">
-      <a class="brand" href="#atlas"
+      <a class="brand" href="#top"
         ><b class="brandmark">IK</b
-        ><span>Iran Knowledge Atlas<small>Public research showcase</small></span></a
+        ><span>Iran Knowledge Atlas<small>Knowledge-system resilience</small></span></a
       >
       <nav aria-label="Main navigation">
         <a href="#atlas">Atlas</a>
-        <a href="#scenarios">Scenarios</a>
-        <a href="#dossier">People & events</a>
+        <a href="#compare">Compare</a>
+        <a href="#stories">Stories</a>
+        <a href="#scenarios">Experiments</a>
         <a href="#sources">Evidence</a>
       </nav>
-      <span class="version">Model v0.6 · public distribution</span>
+      <span class="version" id="release-version">Public research release</span>
     </header>
 
-    <main>
+    <main id="top">
       <div id="status" role="status" class="load-status">Loading the atlas…</div>
       <div id="application" hidden>
         <section class="intro">
           <div>
             <p class="eyebrow">HISTORICAL SYSTEMS RESEARCH · 700 BCE—2026 CE</p>
-            <h1>Knowledge systems, <em>mapped through time.</em></h1>
+            <h1>How do knowledge systems <em>accumulate, survive shocks, and recover?</em></h1>
           </div>
           <p class="introNote">
-            This public site presents historical context and selected precomputed
-            outputs from an exploratory research model. The unpublished research
-            implementation, coefficients, parameter files, event-effect magnitudes,
-            and development history are not distributed with this site.
+            Iran Knowledge Atlas combines documentary history, transparent historical reconstruction,
+            and selected System Dynamics experiments. It does not estimate historical IQ and it does
+            not treat simulated indices as observations.
           </p>
+        </section>
+
+        <section class="research-layers" aria-labelledby="layers-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Three research layers</p>
+              <h2 id="layers-title">Know what kind of claim you are looking at.</h2>
+            </div>
+          </div>
+          <div id="layer-cards" class="layer-cards"></div>
+        </section>
+
+        <section class="search-panel" aria-labelledby="search-title">
+          <div>
+            <p class="eyebrow">Search the atlas</p>
+            <h2 id="search-title">Periods, events, scholars, fields, cities and sources.</h2>
+          </div>
+          <label class="global-search">Search
+            <input id="global-search" type="search" placeholder="Try astronomy, Isfahan, Sasanian, university…" autocomplete="off" />
+          </label>
+          <div id="global-results" class="global-results" aria-live="polite"></div>
         </section>
 
         <section id="atlas" class="atlas">
           <div class="section-heading">
             <div>
-              <p class="eyebrow">Historical atlas</p>
-              <h2>Explore periods, people, events, and reconstructed outputs.</h2>
+              <p class="eyebrow">Historical reconstruction</p>
+              <h2>Explore periods, people, events and reconstructed outputs.</h2>
               <p>
-                The two displayed indices are model reconstructions, not measured
-                historical IQ or causal estimates.
+                The two displayed indices are normalized model constructs. They are not measured
+                historical intelligence and should be interpreted together with the evidence layer.
               </p>
             </div>
-            <span class="tag">Assumed indices · uncalibrated</span>
+            <button class="quiet-button" id="inspect-era">Inspect provenance</button>
           </div>
 
           <div class="toolbar">
@@ -98,20 +121,16 @@
             </div>
 
             <aside class="stock-card">
-              <p class="eyebrow">Published reconstructed outputs</p>
+              <p class="eyebrow">Reconstructed model outputs</p>
               <div class="stock-value knowledge">
                 <b id="stock-k"></b>
-                <span>Knowledge capital <small>Index / 100</small></span>
+                <span>Knowledge capital <small>Normalized index / 100</small></span>
               </div>
               <div class="stock-value capability">
                 <b id="stock-g"></b>
-                <span>Realized knowledge capability <small>Index / 100</small></span>
+                <span>Realized knowledge capability <small>Normalized index / 100</small></span>
               </div>
-              <p class="note">
-                These are precomputed model outputs. The underlying coefficients,
-                raw driver profiles, and event-effect magnitudes are not included
-                in the public distribution.
-              </p>
+              <div class="evidence-summary" id="era-evidence-summary"></div>
               <p id="era-summary"></p>
             </aside>
           </div>
@@ -134,40 +153,83 @@
               <div>
                 <h3>The reconstructed long view</h3>
                 <p>
-                  Published outputs from the private research model. They are
-                  illustrative reconstructions, not observations.
+                  This curve is a model reconstruction. The evidence-coverage rail below it is
+                  documentary metadata, not a statistical confidence interval.
                 </p>
               </div>
               <div class="legend">
-                <span class="k">Knowledge</span><span class="g">Capability</span>
+                <span class="k">Knowledge</span><span class="g">Realized capability</span>
               </div>
             </div>
             <div id="history-chart"></div>
+            <div class="coverage-block">
+              <div class="coverage-heading">
+                <strong>Documentary coverage by period</strong>
+                <span>Limited → moderate → stronger; qualitative metadata only</span>
+              </div>
+              <div id="evidence-rail" class="evidence-rail"></div>
+            </div>
           </div>
+
+          <div class="explanation-card">
+            <div>
+              <p class="eyebrow">Why might the model move here?</p>
+              <h3>Qualitative mechanism explanation</h3>
+            </div>
+            <div id="why-panel"></div>
+          </div>
+        </section>
+
+        <section id="compare">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Comparison mode</p>
+              <h2>Put two historical periods side by side.</h2>
+              <p>Compare public evidence metadata and reconstructed midpoint outputs without exposing the private parameterization.</p>
+            </div>
+          </div>
+          <div class="compare-controls">
+            <label>Period A<select id="compare-a"></select></label>
+            <span>versus</span>
+            <label>Period B<select id="compare-b"></select></label>
+          </div>
+          <div id="compare-grid" class="compare-grid"></div>
+        </section>
+
+        <section id="stories">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Guided story tours</p>
+              <h2>Follow a research question across multiple periods.</h2>
+              <p>Story tours are editorial paths through existing atlas material, not additional historical claims.</p>
+            </div>
+          </div>
+          <div id="story-cards" class="story-cards"></div>
+          <div id="story-player" class="story-player" hidden></div>
         </section>
 
         <section id="scenarios" class="lab">
           <div class="section-heading inverse">
             <div>
-              <p class="eyebrow">PUBLIC SCENARIO GALLERY · 2026 START</p>
-              <h2>Compare selected precomputed trajectories.</h2>
+              <p class="eyebrow">NAMED SYSTEM DYNAMICS EXPERIMENTS · 2026 START</p>
+              <h2>Compare precomputed trajectories and structural uncertainty.</h2>
               <p>
-                The public site intentionally uses precomputed results instead of
-                shipping the executable research model to visitors' browsers.
+                The public site publishes results rather than the executable private model. Shaded
+                envelopes span three alternative acute-shock response structures and are not
+                statistical confidence intervals.
               </p>
             </div>
-            <span class="tag">Exploratory · uncalibrated</span>
+            <button class="quiet-button inverse-button" id="inspect-scenario">Inspect experiment</button>
           </div>
 
           <div class="lab-grid">
             <aside class="controls">
-              <div class="control-head"><h3>Published scenarios</h3></div>
-              <label>Scenario<select id="scenario-select"></select></label>
+              <div class="control-head"><h3>Published experiments</h3></div>
+              <label>Experiment<select id="scenario-select"></select></label>
+              <p class="scenario-category" id="scenario-category"></p>
               <p class="caption" id="scenario-description"></p>
               <div class="note">
-                Full interactive experimentation remains in the private research
-                environment. A future private API can restore richer interaction
-                without exposing the implementation.
+                Exact equations, coefficients and driver values remain in the private canonical repository.
               </div>
             </aside>
 
@@ -180,9 +242,11 @@
               </div>
               <div class="legend">
                 <span class="k">Knowledge capital</span>
-                <span class="g">Realized knowledge capability</span>
+                <span class="g">Realized capability</span>
+                <span class="range">Structural range</span>
               </div>
               <div id="scenario-chart"></div>
+              <p class="uncertainty-note" id="uncertainty-note"></p>
               <div class="result-kpis" id="result-kpis"></div>
             </div>
           </div>
@@ -191,10 +255,10 @@
         <section id="dossier">
           <div class="section-heading">
             <div>
-              <p class="eyebrow">Era dossier</p>
+              <p class="eyebrow">Evidence layer</p>
               <h2 id="dossier-title"></h2>
             </div>
-            <label>Find an event or scholar
+            <label>Filter this period
               <input id="dossier-search" type="search" placeholder="Name, topic, or event" />
             </label>
           </div>
@@ -202,7 +266,7 @@
             <div>
               <h3>Events and institutions <span id="event-count"></span></h3>
               <p class="caption">
-                Public historical descriptions omit the private numerical event-effect assumptions.
+                Historical descriptions are separated from unpublished numerical event-effect assumptions.
               </p>
               <div id="event-list"></div>
             </div>
@@ -219,50 +283,62 @@
         <section id="sources">
           <div class="section-heading">
             <div>
-              <p class="eyebrow">Evidence and interpretation</p>
-              <h2>Public evidence, private implementation.</h2>
+              <p class="eyebrow">Provenance and interpretation</p>
+              <h2>Public evidence, explicit assumptions, private implementation.</h2>
               <p>
-                Historical descriptions and source links are visible here. The
-                research implementation is retained privately while the project is
-                under development.
+                Every public layer should be inspectable. Source links support historical context;
+                they do not validate the numerical reconstruction or its private parameterization.
               </p>
             </div>
           </div>
           <div class="evidence-cards">
             <article>
-              <small>Public</small>
+              <small>Evidence</small>
               <h3>Historical record</h3>
-              <p>Period descriptions, events, biographies, maps, and source links.</p>
+              <p>Events, biographies, period descriptions, map context and source links with citation status.</p>
             </article>
             <article>
-              <small>Public</small>
-              <h3>Selected outputs</h3>
-              <p>Reconstructed stock histories and selected precomputed scenario trajectories.</p>
+              <small>Reconstruction</small>
+              <h3>Historical model outputs</h3>
+              <p>Normalized reconstructed stocks conditional on proxy coding and assumptions; not observations.</p>
             </article>
             <article>
-              <small>Private</small>
-              <h3>Research implementation</h3>
-              <p>Equations, coefficients, parameter files, raw driver profiles, event-effect magnitudes, sensitivity code, Python implementation, tests, and development history.</p>
+              <small>Simulation</small>
+              <h3>Named experiments</h3>
+              <p>Precomputed trajectories and structural ranges generated from the private System Dynamics engine.</p>
             </article>
           </div>
           <div id="source-list" class="sources-grid"></div>
           <details>
             <summary>Research limitations</summary>
             <p>
-              The model remains exploratory and uncalibrated. Published outputs
-              are not forecasts, direct measurements, psychometric IQ estimates,
-              or identified causal effects.
+              The model remains exploratory and uncalibrated. Public outputs are not forecasts,
+              direct measurements, psychometric IQ estimates, or identified causal effects.
+              Stronger claims require empirical calibration, global uncertainty analysis and external review.
             </p>
           </details>
         </section>
 
         <footer>
           <p><strong>Iran Knowledge Atlas</strong><br />Research concept · Arya Kia</p>
-          <p>Public distribution<br />Research implementation retained privately</p>
+          <p id="release-footer">Public distribution</p>
           <div><a href="#sources">Evidence & limitations</a></div>
         </footer>
       </div>
     </main>
+
+    <dialog id="provenance-dialog">
+      <form method="dialog" class="dialog-shell">
+        <div class="dialog-head">
+          <div>
+            <p class="eyebrow">Provenance inspector</p>
+            <h2 id="provenance-title">Evidence details</h2>
+          </div>
+          <button aria-label="Close provenance panel">Close</button>
+        </div>
+        <div id="provenance-body"></div>
+      </form>
+    </dialog>
 
     <noscript>This public atlas requires JavaScript for interactive navigation.</noscript>
     <script type="module" src="./app.mjs"></script>
