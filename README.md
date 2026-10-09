@@ -5,10 +5,40 @@
 ## Live website
 
 - **Project showcase:** https://aryakia.github.io/iran-knowledge-Atlas/
-- **Interactive model / atlas:** https://aryakia.github.io/iran-knowledge-Atlas/atlas/
+- **Interactive atlas and public model results:** https://aryakia.github.io/iran-knowledge-Atlas/atlas/
 
 
 This repository contains only the deliberately reduced public distribution of the **Iran Knowledge Atlas**. The canonical research model remains private.
+
+## Project architecture
+
+This public repository is the **showcase and public distribution layer** for the Iran Knowledge Atlas research project.
+
+The underlying System Dynamics research model is maintained separately in a **private canonical repository**. That private research layer contains the full model implementation, Python and JavaScript engines, equations, parameterization, sensitivity-analysis code, research data, tests, and development history.
+
+Only reviewed public-facing material and precomputed model outputs are exported into this repository.
+
+```text
+PRIVATE RESEARCH LAYER
+Canonical System Dynamics model
+Python + JavaScript engines
+Equations and parameters
+Sensitivity analysis
+Research data and tests
+        │
+        │ controlled / audited export
+        ▼
+PUBLIC REPOSITORY
+Iran Knowledge Atlas
+        │
+        ▼
+GitHub Pages
+        │
+        ├── Project showcase
+        └── Interactive public atlas
+```
+
+The public repository therefore does **not** expose the private model source or research implementation. It provides a safe way to present the project, its historical evidence layer, reconstructed outputs, and selected precomputed System Dynamics experiments.
 
 The public site separates three layers:
 
