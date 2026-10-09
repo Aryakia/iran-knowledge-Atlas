@@ -2,6 +2,12 @@
 
 **A public research showcase on knowledge-system accumulation, disruption, resilience and recovery across Iranian and Persianate history.**
 
+## Live website
+
+- **Project showcase:** https://aryakia.github.io/iran-knowledge-Atlas/
+- **Interactive model / atlas:** https://aryakia.github.io/iran-knowledge-Atlas/atlas/
+
+
 This repository contains only the deliberately reduced public distribution of the **Iran Knowledge Atlas**. The canonical research model remains private.
 
 The public site separates three layers:
