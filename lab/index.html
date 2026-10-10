@@ -3,18 +3,67 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Iran Knowledge Atlas — Research Lab</title>
-<style>
-body{font-family:system-ui,sans-serif;margin:0;background:#0f1714;color:#f5f1e8}
-main{max-width:1100px;margin:auto;padding:64px 24px}
-a{color:#d5b66f}.card{border:1px solid #34453d;border-radius:14px;padding:24px;background:#16211d}
-</style>
+<meta name="description" content="Iran Knowledge Atlas public research laboratory for comparing selected System Dynamics experiments and structural ranges.">
+<meta name="theme-color" content="#10231f">
+<title>Iran Knowledge Atlas — Public Research Lab</title>
+<link rel="stylesheet" href="./styles.css">
 </head>
 <body>
+<header class="topbar">
+  <a class="brand" href="../">Iran Knowledge Atlas<span>Public research laboratory</span></a>
+  <nav><a href="../">Overview</a><a href="../atlas/">Atlas</a><a href="#compare">Compare</a><a href="#methods">Methods</a></nav>
+</header>
+
 <main>
-<h1>Iran Knowledge Atlas — Research Lab</h1>
-<p>Compare selected precomputed System Dynamics experiments and structural ranges.</p>
-<div class="card"><a href="../atlas/">Open the interactive atlas</a></div>
+<section class="hero">
+  <div>
+    <p class="eyebrow">PUBLIC RESEARCH LAB · v0.8</p>
+    <h1>Compare model behavior, not just screenshots.</h1>
+    <p class="lede">This laboratory turns the published System Dynamics experiments into a focused comparison workspace. You can place two experiments side by side, inspect trajectories and structural ranges, and see final model outcomes while the research implementation remains outside this public package.</p>
+  </div>
+  <div class="boundary-note"><strong>Interpretation boundary</strong><span>These are exploratory model outputs. They are not forecasts, observed historical measurements, or identified causal effects.</span></div>
+</section>
+
+<section id="compare" class="lab-shell">
+  <aside class="controls">
+    <p class="eyebrow">Experiment comparison</p>
+    <label>Primary experiment<select id="primary"></select></label>
+    <label>Comparison experiment<select id="comparison"></select></label>
+    <label class="check"><input id="show-range" type="checkbox" checked> Show structural range for the primary experiment</label>
+    <div id="experiment-note" class="note"></div>
+  </aside>
+
+  <div class="results">
+    <div class="result-head">
+      <div><p class="eyebrow">Published trajectories</p><h2 id="title">Loading…</h2><p id="context"></p></div>
+      <span class="tag">Precomputed output</span>
+    </div>
+    <div class="legend">
+      <span class="k">Primary K</span><span class="g">Primary capability</span>
+      <span class="ck">Comparison K</span><span class="cg">Comparison capability</span>
+      <span class="range">Structural range</span>
+    </div>
+    <div id="chart"></div>
+    <div id="kpis" class="kpis"></div>
+  </div>
+</section>
+
+<section id="methods" class="methods">
+  <div class="section-head">
+    <p class="eyebrow">v0.8 research architecture</p>
+    <h2>The simulator now has three research layers.</h2>
+    <p>The public website exposes reviewed outputs and comparison tools. The full research environment includes additional numerical and robustness analysis that is not shipped as executable browser logic here.</p>
+  </div>
+  <div class="method-grid">
+    <article><small>Stage 1</small><h3>Numerical laboratory</h3><p>Euler/RK4 comparison, finer time steps, exact event timing, clipping diagnostics, and reproducibility metadata.</p></article>
+    <article><small>Stage 2</small><h3>Experiment workbench</h3><p>Policy timelines, scheduled shocks, flow decomposition, saved-run comparison, and experiment bundles.</p></article>
+    <article><small>Stage 3</small><h3>Robustness laboratory</h3><p>Seeded parameter-assumption ensembles, percentile fan charts, threshold summaries, and Morris global screening.</p></article>
+  </div>
+  <div class="warning"><strong>Public distribution rule:</strong> this website publishes selected results and generic presentation code, while detailed equations, coefficients, parameter ranges, and analysis implementation are not distributed in the browser package.</div>
+</section>
 </main>
+
+<footer><span>Iran Knowledge Atlas · Arya Kia</span><span id="release">Public research release</span></footer>
+<script type="module" src="./app.mjs"></script>
 </body>
 </html>
