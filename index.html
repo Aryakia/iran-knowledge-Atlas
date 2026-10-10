@@ -3,40 +3,38 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Iran Knowledge Atlas — an exploratory System Dynamics research platform on knowledge-system accumulation, disruption, resilience and recovery across Iranian and Persianate history.">
+<meta name="description" content="Iran Knowledge Atlas — a System Dynamics research platform on knowledge-system accumulation, disruption, resilience and recovery across Iranian and Persianate history.">
 <meta name="theme-color" content="#10231f">
 <meta property="og:title" content="Iran Knowledge Atlas">
-<meta property="og:description" content="Evidence, historical reconstruction and System Dynamics experiments on knowledge-system resilience.">
+<meta property="og:description" content="Evidence, historical reconstruction, experiments and a v0.8 research laboratory.">
 <meta property="og:image" content="./atlas/og.png">
 <title>Iran Knowledge Atlas — Arya Kia</title>
 <style>
-:root{--bg:#0f1714;--panel:#16211d;--panel2:#192822;--text:#f5f1e8;--muted:#b9c1bb;--line:#34453d;--accent:#d5b66f;--green:#7fb09a;--blue:#8faed0}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:radial-gradient(circle at 80% 0,#27382f 0,#0f1714 44%);color:var(--text);line-height:1.62}.wrap{width:min(1160px,calc(100% - 40px));margin:auto}a{color:inherit}.top{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0;border-bottom:1px solid var(--line)}.brand{font-weight:800;text-decoration:none}.brand span{display:block;font-size:.74rem;color:var(--muted);font-weight:500}.top nav{display:flex;gap:22px}.top nav a{font-size:.88rem;color:var(--muted);text-decoration:none}.hero{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr);gap:54px;align-items:center;padding:76px 0 58px}.eyebrow{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--accent)}h1{font-size:clamp(3rem,6.5vw,5.8rem);line-height:.96;letter-spacing:-.05em;margin:.5rem 0 1.2rem}h1 em{font-family:Georgia,serif;font-weight:400;color:#dfe9e3}.lede{font-size:1.08rem;color:var(--muted);max-width:760px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.primary,.secondary{display:inline-flex;align-items:center;min-height:46px;padding:10px 16px;border-radius:9px;text-decoration:none;font-weight:800}.primary{background:var(--accent);color:#121713}.secondary{border:1px solid var(--line)}.preview{border:1px solid var(--line);background:var(--panel);padding:12px;border-radius:16px}.preview img{display:block;width:100%;border-radius:9px;aspect-ratio:16/10;object-fit:cover;object-position:top}.preview p{margin:11px 5px 2px;color:var(--muted);font-size:.82rem}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding-bottom:58px}.metric{border-top:1px solid var(--line);padding-top:14px}.metric b{display:block;font-size:1.55rem;color:var(--accent)}.metric span{font-size:.78rem;color:var(--muted)}.section{padding:54px 0;border-top:1px solid var(--line)}.section h2{font-size:clamp(1.8rem,4vw,3rem);letter-spacing:-.035em;margin:.35rem 0 1rem}.section-intro{max-width:800px;color:var(--muted)}.layers,.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}.card{border:1px solid var(--line);background:linear-gradient(180deg,var(--panel),#111a17);border-radius:14px;padding:22px}.card small{color:var(--green);font-weight:800;text-transform:uppercase;letter-spacing:.08em}.card h3{margin:.65rem 0 .45rem}.card p{color:var(--muted);font-size:.9rem}.boundary{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}.boundary article{border-radius:14px;padding:22px}.public{background:#182921;border:1px solid #315444}.private{background:#221d17;border:1px solid #51412c}.boundary ul{padding-left:20px;color:var(--muted)}.warning{margin-top:26px;border-left:3px solid var(--accent);background:#1e1c16;padding:16px 18px;color:var(--muted)}footer{padding:32px 0 52px;border-top:1px solid var(--line);color:#89948d;font-size:.85rem;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
-@media(max-width:900px){.hero{grid-template-columns:1fr}.preview{max-width:720px}.metrics,.layers,.features{grid-template-columns:repeat(2,1fr)}.boundary{grid-template-columns:1fr}}
-@media(max-width:560px){.wrap{width:min(100% - 28px,1160px)}.top{align-items:flex-start}.top nav{display:none}.hero{padding-top:52px}.metrics,.layers,.features{grid-template-columns:1fr}h1{font-size:3.1rem}}
+:root{--bg:#0f1714;--panel:#16211d;--text:#f5f1e8;--muted:#b9c1bb;--line:#34453d;--accent:#d5b66f;--green:#7fb09a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:radial-gradient(circle at 80% 0,#27382f 0,#0f1714 45%);color:var(--text);line-height:1.6}.wrap{width:min(1160px,calc(100% - 40px));margin:auto}a{color:inherit}.top{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0;border-bottom:1px solid var(--line)}.brand{font-weight:800;text-decoration:none}.brand span{display:block;font-size:.73rem;color:var(--muted);font-weight:500}.top nav{display:flex;gap:20px}.top nav a{font-size:.86rem;color:var(--muted);text-decoration:none}.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(340px,.9fr);gap:48px;align-items:center;padding:74px 0 58px}.eyebrow{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--accent)}h1{font-size:clamp(3rem,6.2vw,5.6rem);line-height:.97;letter-spacing:-.05em;margin:.5rem 0 1.2rem}h1 em{font-family:Georgia,serif;font-weight:400;color:#dfe9e3}.lede{font-size:1.07rem;color:var(--muted);max-width:760px}.actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:26px}.primary,.secondary{display:inline-flex;align-items:center;min-height:46px;padding:10px 16px;border-radius:9px;text-decoration:none;font-weight:800}.primary{background:var(--accent);color:#121713}.secondary{border:1px solid var(--line)}.preview{border:1px solid var(--line);background:var(--panel);padding:12px;border-radius:16px}.preview img{display:block;width:100%;border-radius:9px;aspect-ratio:16/10;object-fit:cover;object-position:top}.preview p{margin:11px 5px 2px;color:var(--muted);font-size:.82rem}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding-bottom:58px}.metric{border-top:1px solid var(--line);padding-top:14px}.metric b{display:block;font-size:1.55rem;color:var(--accent)}.metric span{font-size:.78rem;color:var(--muted)}.section{padding:54px 0;border-top:1px solid var(--line)}.section h2{font-size:clamp(1.8rem,4vw,3rem);letter-spacing:-.035em;margin:.35rem 0 1rem}.section-intro{max-width:800px;color:var(--muted)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}.card{border:1px solid var(--line);background:linear-gradient(180deg,var(--panel),#111a17);border-radius:14px;padding:22px}.card small{color:var(--green);font-weight:800;text-transform:uppercase;letter-spacing:.08em}.card h3{margin:.65rem 0 .45rem}.card p{color:var(--muted);font-size:.9rem}.warning{margin-top:24px;border-left:3px solid var(--accent);background:#1e1c16;padding:16px 18px;color:var(--muted)}footer{padding:32px 0 52px;border-top:1px solid var(--line);color:#89948d;font-size:.85rem;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.metrics,.cards{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.wrap{width:min(100% - 28px,1160px)}.top nav{display:none}.metrics,.cards{grid-template-columns:1fr}h1{font-size:3.1rem}}
 </style>
 </head>
 <body>
 <header class="wrap top">
 <a class="brand" href="./">Iran Knowledge Atlas<span>Arya Kia · historical systems research</span></a>
-<nav><a href="#method">Research layers</a><a href="./lab/">Research Lab</a><a href="#features">Explore</a><a href="#boundary">Public/private boundary</a></nav>
+<nav><a href="./atlas/">Atlas</a><a href="./atlas/lab/">Research Lab</a><a href="#method">Research layers</a><a href="#scope">Scope</a></nav>
 </header>
 <main>
 <section class="wrap hero">
 <div>
 <div class="eyebrow">Knowledge-system resilience · v0.8 research architecture</div>
 <h1>How do knowledge systems <em>survive history?</em></h1>
-<p class="lede">Iran Knowledge Atlas is an exploratory System Dynamics research platform examining how knowledge can accumulate, move, face disruption, and recover across Iranian and Persianate history. It combines documentary evidence, transparent reconstruction and selected model experiments without presenting simulated indices as historical measurements.</p>
+<p class="lede">Iran Knowledge Atlas is an exploratory System Dynamics research platform examining how knowledge can accumulate, move, face disruption, and recover across Iranian and Persianate history. The v0.8 program now combines historical evidence, reconstruction, scenario experiments, numerical diagnostics, and robustness analysis.</p>
 <div class="actions">
 <a class="primary" href="./atlas/">Explore the interactive atlas →</a>
-<a class="secondary" href="./lab/">Open the Research Lab</a>
-<a class="secondary" href="#method">Understand the methodology</a>
+<a class="secondary" href="./atlas/lab/">Open the Research Lab</a>
 </div>
 <div class="warning"><strong>Interpretation boundary:</strong> this project does not estimate historical national IQ. Knowledge Capital and Realized Knowledge Capability are normalized model constructs, not observed psychometric measures or population rankings.</div>
 </div>
-<a class="preview" href="./atlas/" aria-label="Open interactive Iran Knowledge Atlas">
+<a class="preview" href="./atlas/lab/" aria-label="Open Iran Knowledge Atlas Research Lab">
 <img src="./atlas/og.png" alt="Preview of the Iran Knowledge Atlas research interface">
-<p>Interactive atlas · dynasty maps · evidence · comparison · story tours · named experiments</p>
+<p>v0.8 Research Lab · experiments · numerical methods · robustness architecture</p>
 </a>
 </section>
 
@@ -50,37 +48,29 @@
 <section id="method" class="section"><div class="wrap">
 <div class="eyebrow">Three research layers</div>
 <h2>Evidence is not reconstruction. Reconstruction is not simulation.</h2>
-<p class="section-intro">The public interface deliberately separates different types of claims so a historical source, a modeled reconstruction and a forward experiment are not visually or conceptually conflated.</p>
-<div class="layers">
-<article class="card"><small>01 · Evidence</small><h3>What is historically documented?</h3><p>Periods, events, scholars, places and source links are presented with citation-status metadata and explicit evidence limits.</p></article>
-<article class="card"><small>02 · Reconstruction</small><h3>What does the historical model represent?</h3><p>Normalized Knowledge Capital and Realized Knowledge Capability outputs are conditional on proxy coding and uncalibrated assumptions.</p></article>
-<article class="card"><small>03 · Simulation</small><h3>What happens under specified experiments?</h3><p>Named System Dynamics scenarios are precomputed privately and published as trajectories with structural-sensitivity ranges.</p></article>
+<p class="section-intro">The interface deliberately separates different kinds of claims so documentary sources, historical reconstruction and forward experiments are not visually or conceptually conflated.</p>
+<div class="cards">
+<article class="card"><small>01 · Evidence</small><h3>Historical record</h3><p>Periods, events, scholars, places and source links with explicit evidence limits.</p></article>
+<article class="card"><small>02 · Reconstruction</small><h3>Historical model</h3><p>Normalized Knowledge Capital and Realized Knowledge Capability outputs conditional on proxy coding and assumptions.</p></article>
+<article class="card"><small>03 · Simulation</small><h3>System Dynamics experiments</h3><p>Named forward scenarios with published trajectories and structural ranges.</p></article>
 </div>
 </div></section>
 
-<section id="features" class="section"><div class="wrap">
-<div class="eyebrow">What you can explore</div>
-<h2>A research atlas, not a static project page.</h2>
-<div class="features">
-<article class="card"><h3>Historical maps</h3><p>Select a dynasty or year and inspect dated OpenHistoricalMap context alongside modern orientation layers.</p></article>
-<article class="card"><h3>Period comparison</h3><p>Compare two eras using dates, centers, documentary coverage, record counts and reconstructed midpoint outputs.</p></article>
-<article class="card"><h3>Evidence provenance</h3><p>Inspect citation status and evidence class for periods, events, scholars and public experiments.</p></article>
-<article class="card"><h3>Structural uncertainty</h3><p>Scenario charts show ranges across alternative acute-shock structures rather than presenting one trajectory as uniquely certain.</p></article>
-<article class="card"><h3>Guided stories</h3><p>Follow curated tours through shock and recovery, moving knowledge centers, and the modern institutional transition.</p></article>
-<article class="card"><h3>Search + share</h3><p>Search the atlas and share URLs that reproduce a selected era, year, map, experiment and comparison state.</p></article>
-<article class="card"><h3>v0.8 Research Lab</h3><p>Explore published scenarios through a dedicated research workspace and see how the simulator has expanded through numerical, experiment, and robustness stages.</p></article>
+<section class="section"><div class="wrap">
+<div class="eyebrow">v0.8 Research Lab</div>
+<h2>From scenario viewer to research laboratory.</h2>
+<div class="cards">
+<article class="card"><small>Stage 1</small><h3>Numerical laboratory</h3><p>Euler/RK4 comparison, finer time steps, event timing, clipping diagnostics and reproducibility metadata.</p></article>
+<article class="card"><small>Stage 2</small><h3>Experiment workbench</h3><p>Policy timelines, scheduled shocks, flow decomposition, saved-run comparison and experiment bundles.</p></article>
+<article class="card"><small>Stage 3</small><h3>Robustness laboratory</h3><p>Seeded parameter-assumption ensembles, percentile fan charts, threshold summaries and Morris global screening.</p></article>
 </div>
-<div class="actions"><a class="primary" href="./atlas/">Open the atlas →</a><a class="secondary" href="./lab/">Open the Research Lab →</a></div>
+<div class="actions"><a class="primary" href="./atlas/lab/">Open the Research Lab →</a><a class="secondary" href="./atlas/">Open the Atlas →</a></div>
 </div></section>
 
-<section id="boundary" class="section"><div class="wrap">
-<div class="eyebrow">Research protection</div>
-<h2>Public scholarship, private implementation.</h2>
-<p class="section-intro">The public site is intentionally a distribution layer. It is not a mirror or fork of the canonical research repository.</p>
-<div class="boundary">
-<article class="public"><h3>Public</h3><ul><li>historical descriptions and public citations</li><li>maps and scholar/event records</li><li>precomputed reconstructed outputs</li><li>named scenario trajectories and structural ranges</li><li>generic presentation code</li></ul></article>
-<article class="private"><h3>Private canonical research repository</h3><ul><li>Python and JavaScript model engines</li><li>equations and coefficients</li><li>raw driver profiles and event-effect magnitudes</li><li>sensitivity implementation and tests</li><li>internal research notes and development history</li></ul></article>
-</div>
+<section id="scope" class="section"><div class="wrap">
+<div class="eyebrow">Research scope</div>
+<h2>Public scholarship with a controlled research release.</h2>
+<p class="section-intro">The website presents reviewed historical material, selected reconstructed outputs, published experiment trajectories and generic presentation features. Detailed implementation artifacts are maintained separately from this browser release.</p>
 </div></section>
 </main>
 <footer class="wrap"><span>Iran Knowledge Atlas · Arya Kia</span><span>Exploratory research platform · v0.8</span></footer>
