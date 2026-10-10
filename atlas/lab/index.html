@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Iran Knowledge Atlas research laboratory with selected System Dynamics experiments.">
+<meta name="theme-color" content="#10231f">
+<title>Iran Knowledge Atlas — Research Lab</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../../">Iran Knowledge Atlas<span>Research laboratory</span></a>
+  <nav><a href="../../">Overview</a><a href="../">Atlas</a><a href="#experiments">Experiments</a><a href="#methods">Methods</a></nav>
+</header>
+
+<main>
+<section class="hero">
+  <div>
+    <p class="eyebrow">RESEARCH LAB · v0.8</p>
+    <h1>Explore the model as a research program.</h1>
+    <p class="lede">The v0.8 simulator combines numerical checks, staged experiments, trajectory diagnostics, and robustness analysis. This page presents selected experiment results and direct links into the interactive atlas.</p>
+  </div>
+  <div class="boundary-note"><strong>Interpretation boundary</strong><span>These are exploratory model outputs. They are not forecasts, observed historical measurements, or identified causal effects.</span></div>
+</section>
+
+<section id="experiments" class="methods">
+  <div class="section-head">
+    <p class="eyebrow">Published experiments · 2026 start</p>
+    <h2>Six scenarios, one common research frame.</h2>
+    <p>Open any experiment in the atlas to inspect its full trajectory and structural-sensitivity range. Final values below are normalized model indices at +100 years.</p>
+  </div>
+  <div class="method-grid">
+    <article><small>Reference</small><h3>Current-era baseline</h3><p>Continuation of the current-era assumptions.</p><div class="scenario-metrics"><span>Final K<b>62.91</b></span><span>Final capability<b>66.59</b></span></div><a class="open-link" href="../?scenario=baseline#scenarios">Open experiment →</a></article>
+    <article><small>Counterfactual control</small><h3>No-war control</h3><p>Conflict pathway disabled while other current-era assumptions are retained.</p><div class="scenario-metrics"><span>Final K<b>70.76</b></span><span>Final capability<b>73.33</b></span></div><a class="open-link" href="../?scenario=no-war-control#scenarios">Open experiment →</a></article>
+    <article><small>Capacity building</small><h3>Education & exchange</h3><p>Stronger education, exchange and institutional conditions with lower conflict and migration pressure.</p><div class="scenario-metrics"><span>Final K<b>83.19</b></span><span>Final capability<b>80.96</b></span></div><a class="open-link" href="../?scenario=education-exchange#scenarios">Open experiment →</a></article>
+    <article><small>Resilience</small><h3>Institutional continuity</h3><p>Stronger institutional continuity and political stability.</p><div class="scenario-metrics"><span>Final K<b>69.46</b></span><span>Final capability<b>70.51</b></span></div><a class="open-link" href="../?scenario=institutional-continuity#scenarios">Open experiment →</a></article>
+    <article><small>Migration</small><h3>Skilled-retention case</h3><p>Lower outward skilled-migration pressure.</p><div class="scenario-metrics"><span>Final K<b>67.87</b></span><span>Final capability<b>69.45</b></span></div><a class="open-link" href="../?scenario=migration-retention#scenarios">Open experiment →</a></article>
+    <article><small>Shock & recovery</small><h3>Repeated-shock stress test</h3><p>Three acute shocks test whether disruption can create a persistent cumulative gap.</p><div class="scenario-metrics"><span>Final K<b>65.45</b></span><span>Minimum K<b>62.33</b></span></div><a class="open-link" href="../?scenario=repeated-shocks#scenarios">Open experiment →</a></article>
+  </div>
+</section>
+
+<section id="methods" class="methods">
+  <div class="section-head">
+    <p class="eyebrow">v0.8 research architecture</p>
+    <h2>Three implementation stages now sit behind the atlas.</h2>
+    <p>The simulator has grown from a scenario viewer into a broader research laboratory.</p>
+  </div>
+  <div class="method-grid">
+    <article><small>Stage 1</small><h3>Numerical laboratory</h3><p>Euler/RK4 comparison, finer time steps, exact event timing, clipping diagnostics, and reproducibility metadata.</p></article>
+    <article><small>Stage 2</small><h3>Experiment workbench</h3><p>Policy timelines, scheduled shocks, flow decomposition, saved-run comparison, and experiment bundles.</p></article>
+    <article><small>Stage 3</small><h3>Robustness laboratory</h3><p>Seeded parameter-assumption ensembles, percentile fan charts, threshold summaries, and Morris global screening.</p></article>
+  </div>
+</section>
+</main>
+
+<footer><span>Iran Knowledge Atlas · Arya Kia</span><span>Research lab · v0.8</span></footer>
+</body>
+</html>
