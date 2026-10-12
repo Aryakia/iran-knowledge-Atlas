@@ -13,9 +13,10 @@
 .hero{padding:76px 0 54px}.status{display:inline-flex;gap:8px;align-items:center;padding:7px 11px;border:1px solid #655128;border-radius:999px;background:#211d15;color:#e3c67c;font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.status:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--amber)}.eyebrow{margin:18px 0 7px;color:var(--accent);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:800}h1{margin:.3rem 0 1.1rem;font-size:clamp(3rem,6vw,5.5rem);line-height:.98;letter-spacing:-.05em}h1 em{font-family:Georgia,serif;font-weight:400;color:#dfe9e3}.lede{max-width:820px;color:var(--muted);font-size:1.08rem}.notice{margin-top:28px;max-width:900px;padding:18px 20px;border-left:3px solid var(--amber);background:#1e1b14;color:var(--muted)}.notice strong{color:var(--text)}
 .section{padding:56px 0;border-top:1px solid var(--line)}.section h2{margin:.3rem 0 1rem;font-size:clamp(2rem,4vw,3.2rem);letter-spacing:-.035em}.intro{max-width:820px;color:var(--muted)}.stage-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:28px}.stage{padding:26px;border:1px solid var(--line);border-radius:15px;background:linear-gradient(180deg,var(--panel),#111a17)}.stage small{color:var(--green);font-size:.72rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase}.stage h3{margin:.65rem 0 .7rem;font-size:1.45rem}.stage p{color:var(--muted)}.phase-list{display:grid;gap:8px;margin-top:18px}.phase{display:grid;grid-template-columns:58px 1fr;gap:12px;padding:11px 0;border-top:1px solid var(--line)}.phase b{color:var(--accent)}.phase span{color:var(--muted);font-size:.88rem}.gate{margin-top:20px;padding:14px;border-radius:9px;background:#1d271f;border:1px solid #365040;color:var(--muted)}.gate strong{color:var(--green)}
 .future-card{margin-top:24px;padding:26px;border:1px dashed #5a6662;border-radius:15px;background:#111916}.future-card h3{margin:.4rem 0}.future-card p{max-width:850px;color:var(--muted)}
+.progress-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:24px}.progress-grid article{padding:18px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}.progress-grid small,.progress-grid b{display:block}.progress-grid small{color:var(--muted);font-size:.72rem}.progress-grid b{font-size:1.65rem;margin-top:4px;color:var(--accent)}.coverage-wrap{margin-top:22px;overflow-x:auto;border:1px solid var(--line);border-radius:12px}.coverage-table{width:100%;border-collapse:collapse;min-width:880px;background:#111916}.coverage-table th,.coverage-table td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left;font-size:.82rem}.coverage-table th{color:var(--muted);font-weight:700;background:#16211d}.coverage-table td:nth-child(n+3){font-variant-numeric:tabular-nums}.screen-pass{color:var(--green);font-weight:800}.screen-review{color:#e3c67c;font-weight:800}
 .actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:28px}.primary,.secondary{display:inline-flex;align-items:center;min-height:44px;padding:10px 16px;border-radius:9px;text-decoration:none;font-weight:800}.primary{background:var(--accent);color:#131813}.secondary{border:1px solid var(--line)}
 footer{padding:32px 0 52px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:#89948d;font-size:.84rem}
-@media(max-width:820px){.stage-grid{grid-template-columns:1fr}.top nav{gap:12px}}@media(max-width:620px){.wrap{width:min(100% - 28px,1160px)}.top nav a:not(.active){display:none}h1{font-size:3rem}}
+@media(max-width:820px){.stage-grid{grid-template-columns:1fr}.progress-grid{grid-template-columns:repeat(2,1fr)}.top nav{gap:12px}}@media(max-width:620px){.wrap{width:min(100% - 28px,1160px)}.progress-grid{grid-template-columns:1fr 1fr}.top nav a:not(.active){display:none}h1{font-size:3rem}}
 </style>
 </head>
 <body>
@@ -38,13 +39,39 @@ footer{padding:32px 0 52px;border-top:1px solid var(--line);display:flex;justify
   <div class="notice"><strong>Development status:</strong> this page is a forward research roadmap. Stage 9 and Stage 10 are planned and under development; they should not be interpreted as completed analyses, validated results, or published findings.</div>
 </section>
 
+<section id="development-status" class="section"><div class="wrap">
+  <p class="eyebrow">Stage 9A · implementation in progress</p>
+  <h2>The first live modern-data audit is now running.</h2>
+  <p class="intro">The research pipeline now fetches the six registered World Bank/UIS candidate series for Iran into a staging layer, checks their actual 1990–2025 availability, and blocks canonical promotion until a separate manual quality review is completed.</p>
+  <div class="progress-grid">
+    <article><small>Exact series registered</small><b>6</b><small>World Bank / UIS candidates</small></article>
+    <article><small>Coverage audited</small><b>6</b><small>first live provider audit completed</small></article>
+    <article><small>Mechanical coverage candidates</small><b>1</b><small>availability screen only</small></article>
+    <article><small>Approved for calibration</small><b>0</b><small>manual quality gate remains closed</small></article>
+  </div>
+  <div class="coverage-wrap">
+    <table class="coverage-table">
+      <thead><tr><th>Candidate series</th><th>Observed years</th><th>N</th><th>Train N</th><th>Validation N</th><th>Availability screen</th></tr></thead>
+      <tbody>
+        <tr><td>Tertiary enrollment</td><td>1995–2022</td><td>26</td><td>19</td><td>7</td><td class="screen-review">Manual review</td></tr>
+        <tr><td>Adult literacy</td><td>1991–2023</td><td>21</td><td>13</td><td>8</td><td class="screen-review">Manual review</td></tr>
+        <tr><td>Life expectancy</td><td>1990–2024</td><td>35</td><td>26</td><td>9</td><td class="screen-pass">Coverage candidate</td></tr>
+        <tr><td>Scientific & technical journal articles</td><td>1996–2023</td><td>28</td><td>20</td><td>8</td><td class="screen-review">Manual review</td></tr>
+        <tr><td>Researchers in R&amp;D / million</td><td>2006–2021</td><td>10</td><td>7</td><td>3</td><td class="screen-review">Manual review</td></tr>
+        <tr><td>R&amp;D expenditure / GDP</td><td>2001–2021</td><td>15</td><td>12</td><td>3</td><td class="screen-review">Manual review</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="notice"><strong>Important:</strong> this is a coverage audit, not a scientific approval. Definition consistency, methodological breaks, units, construct validity, and redistribution/licensing terms still require explicit review before any series can enter the canonical calibration dataset.</div>
+</div></section>
+
 <section id="stage-9" class="section"><div class="wrap">
-  <p class="eyebrow">Stage 9 · next planned stage</p>
+  <p class="eyebrow">Stage 9 · in development</p>
   <h2>Empirical Calibration & Validation</h2>
   <p class="intro">Stage 9 is the transition from an exploratory, assumption-driven model toward a restricted modern model that can be evaluated against observed data. The purpose is not to fit the full 2,700-year reconstruction.</p>
   <div class="stage-grid">
     <article class="stage">
-      <small>Stage 9 workflow</small>
+      <small>Stage 9 workflow · 9A underway</small>
       <h3>Modern empirical pilot</h3>
       <div class="phase-list">
         <div class="phase"><b>9A</b><span>Audit exact source series: definitions, units, coverage, missingness, breaks, and redistribution terms.</span></div>
