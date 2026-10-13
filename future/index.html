@@ -40,13 +40,13 @@ footer{padding:32px 0 52px;border-top:1px solid var(--line);display:flex;justify
 </section>
 
 <section id="development-status" class="section"><div class="wrap">
-  <p class="eyebrow">Stage 9A · implementation in progress</p>
-  <h2>The first live modern-data audit is now running.</h2>
-  <p class="intro">The research pipeline now fetches the six registered World Bank/UIS candidate series for Iran into a staging layer, checks their actual 1990–2025 availability, and blocks canonical promotion until a separate manual quality review is completed.</p>
+  <p class="eyebrow">Stage 9A.2 · construct & comparability review complete</p>
+  <h2>The first empirical data roles are now formally separated.</h2>
+  <p class="intro">The pipeline now goes beyond data availability. Each of the six registered World Bank/UIS series has a reviewed candidate role, comparability restriction, and Stage 9B use. None is treated automatically as a direct observation of Knowledge Capital, Realized Knowledge Capability, or Recovery Capacity.</p>
   <div class="progress-grid">
     <article><small>Exact series registered</small><b>6</b><small>World Bank / UIS candidates</small></article>
-    <article><small>Coverage audited</small><b>6</b><small>first live provider audit completed</small></article>
-    <article><small>Mechanical coverage candidates</small><b>1</b><small>availability screen only</small></article>
+    <article><small>Construct roles reviewed</small><b>6</b><small>all exact selected series</small></article>
+    <article><small>Accepted for specified role</small><b>2</b><small>life expectancy + journal output</small></article>
     <article><small>Approved for calibration</small><b>0</b><small>manual quality gate remains closed</small></article>
   </div>
   <div class="coverage-wrap">
@@ -63,15 +63,29 @@ footer{padding:32px 0 52px;border-top:1px solid var(--line);display:flex;justify
     </table>
   </div>
   <div class="notice"><strong>Important:</strong> this is a coverage audit, not a scientific approval. Definition, unit, and World Bank-displayed CC BY-4.0 metadata have now been reviewed for all six registered series. Construct validity, actual time-series comparability/coverage, and methodological-break review remain open, so no series can yet enter the canonical calibration dataset.</div>
+  <div class="coverage-wrap">
+    <table class="coverage-table">
+      <thead><tr><th>Series</th><th>Stage 9A.2 role</th><th>Decision</th><th>Reviewed window</th><th>Direct latent-stock loading?</th></tr></thead>
+      <tbody>
+        <tr><td>Tertiary enrollment</td><td>Education-driver / capability-formation input</td><td class="screen-review">Conditional</td><td>1999–2022</td><td>No</td></tr>
+        <tr><td>Adult literacy</td><td>Secondary proxy for realized capability</td><td class="screen-review">Conditional</td><td>2008–2023</td><td>Conditionally, never alone</td></tr>
+        <tr><td>Life expectancy</td><td>Health-driver observation</td><td class="screen-pass">Accept for role</td><td>1990–2024</td><td>No</td></tr>
+        <tr><td>Scientific journal articles</td><td>Knowledge-production output flow</td><td class="screen-pass">Accept for role</td><td>2003–2023</td><td>No</td></tr>
+        <tr><td>Researchers in R&amp;D / million</td><td>Research-capacity input</td><td class="screen-review">Deferred</td><td>Sparse</td><td>No</td></tr>
+        <tr><td>R&amp;D expenditure / GDP</td><td>Research/infrastructure investment input</td><td class="screen-review">Deferred</td><td>Sparse</td><td>No</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="notice"><strong>Stage 9B entry gate:</strong> specification may begin, but estimation is still closed. The current candidate common model window is 2003–2023, with training through 2015 and held-out validation from 2016. Indicator-specific observation masks are required; missing observations will not be fabricated to create a balanced panel.</div>
 </div></section>
 
 <section id="stage-9" class="section"><div class="wrap">
-  <p class="eyebrow">Stage 9 · in development</p>
+  <p class="eyebrow">Stage 9 · in development · Stage 9B next</p>
   <h2>Empirical Calibration & Validation</h2>
   <p class="intro">Stage 9 is the transition from an exploratory, assumption-driven model toward a restricted modern model that can be evaluated against observed data. The purpose is not to fit the full 2,700-year reconstruction.</p>
   <div class="stage-grid">
     <article class="stage">
-      <small>Stage 9 workflow · 9A underway</small>
+      <small>Stage 9 workflow · 9A.2 complete · 9B next</small>
       <h3>Modern empirical pilot</h3>
       <div class="phase-list">
         <div class="phase"><b>9A</b><span>Audit exact source series: definitions, units, coverage, missingness, breaks, and redistribution terms.</span></div>
