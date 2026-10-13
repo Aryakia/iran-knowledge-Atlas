@@ -47,7 +47,7 @@ footer{padding:32px 0 52px;border-top:1px solid var(--line);display:flex;justify
     <article><small>Exact series registered</small><b>6</b><small>World Bank / UIS candidates</small></article>
     <article><small>Construct roles reviewed</small><b>6</b><small>all exact selected series</small></article>
     <article><small>Active observation channels</small><b>4</b><small>1 stock · 2 drivers · 1 flow</small></article>
-    <article><small>Dynamic calibration candidates</small><b>3</b><small>pre-screen only · no estimates</small></article>
+    <article><small>Free first-fit candidates</small><b>2</b><small>creation + formation scales</small></article>
   </div>
   <div class="coverage-wrap">
     <table class="coverage-table">
@@ -76,13 +76,13 @@ footer{padding:32px 0 52px;border-top:1px solid var(--line);display:flex;justify
       </tbody>
     </table>
   </div>
-  <div class="notice"><strong>Stage 9B–9C status:</strong> observation-model specification and pre-estimation identifiability screening are now implemented. The candidate common model window remains 2003–2023, with training through 2015 and held-out validation from 2016. Indicator-specific observation masks are required. The provisional dynamic subset is creationScale, formationScale, and baselineLoss; it may shrink after canonical-data Jacobian/profile checks.</div>
+  <div class="notice"><strong>Stage 9B–9C status:</strong> observation-model specification and pre-estimation identifiability screening are now implemented. The candidate common model window remains 2003–2023, with training through 2015 and held-out validation from 2016. Indicator-specific observation masks are required. The first local Jacobian was full-rank but found formationScale and baselineLoss nearly collinear (|cosine| ≈ 0.997). The provisional free first-fit subset is therefore creationScale + formationScale; baselineLoss is profile-only.</div>
   <div class="coverage-wrap">
     <table class="coverage-table">
       <thead><tr><th>Stage</th><th>Status</th><th>Implemented result</th><th>Gate</th></tr></thead>
       <tbody>
         <tr><td>9B</td><td class="screen-pass">Implemented</td><td>Role-specific observation equations for literacy→G, enrollment→education driver, life expectancy→health driver, and journal articles→knowledge-production flow.</td><td>No estimation</td></tr>
-        <tr><td>9C</td><td class="screen-pass">Implemented</td><td>Pre-estimation parameter subset and local Jacobian/confounding diagnostics.</td><td>No calibration</td></tr>
+        <tr><td>9C</td><td class="screen-pass">Implemented</td><td>Pre-estimation parameter subset and local Jacobian/confounding diagnostics; the first screen reduced the free subset from three candidates to two.</td><td>No calibration</td></tr>
         <tr><td>9D</td><td class="screen-review">Gated</td><td>Canonical-data promotion and training calibration have not started.</td><td>Requires reviewed promoted data + frozen estimable subset</td></tr>
       </tbody>
     </table>
@@ -100,7 +100,7 @@ footer{padding:32px 0 52px;border-top:1px solid var(--line);display:flex;justify
       <div class="phase-list">
         <div class="phase"><b>9A</b><span>Audit exact source series: definitions, units, coverage, missingness, breaks, and redistribution terms.</span></div>
         <div class="phase"><b>9B</b><span><strong>Implemented:</strong> role-specific observation model for latent stocks, drivers, and model flows with irregular observation masks.</span></div>
-        <div class="phase"><b>9C</b><span><strong>Implemented:</strong> pre-estimation identifiability plan and local Jacobian screening; provisional maximum of three dynamic parameters.</span></div>
+        <div class="phase"><b>9C</b><span><strong>Implemented:</strong> pre-estimation identifiability plan and local Jacobian screening; first-fit free subset reduced to two parameters, with baselineLoss profile-only.</span></div>
         <div class="phase"><b>9D</b><span><strong>Next, but gated:</strong> promote reviewed canonical data, freeze the estimable subset, then estimate on training years only.</span></div>
         <div class="phase"><b>9E</b><span>Evaluate held-out observations against persistence and linear-trend benchmarks.</span></div>
         <div class="phase"><b>9F</b><span>Estimate empirical parameter and observation uncertainty only where supported by the data.</span></div>
