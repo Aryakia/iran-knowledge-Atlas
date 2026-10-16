@@ -116,6 +116,18 @@ footer{padding:32px 0 52px;border-top:1px solid var(--line);display:flex;justify
   </div>
 </div></section>
 
+<section id="stage-9-progress" class="section"><div class="wrap">
+  <p class="eyebrow">Stage 9B–9E · current implementation status</p>
+  <h2>The empirical architecture now reaches calibration and validation—without pretending either has occurred.</h2>
+  <div class="stage-grid">
+    <article class="stage"><small>Stage 9B · implemented</small><h3>Observation model</h3><p>Separate equations now map reviewed indicators to latent-stock, driver, or flow signals. Irregular observation years are supported without creating missing empirical values.</p></article>
+    <article class="stage"><small>Stage 9C · implemented</small><h3>Identifiability pre-screen</h3><p>The provisional first-fit dynamic subset is reduced to creationScale and formationScale; baselineLoss remains profile-only after a strong local confounding signal.</p></article>
+    <article class="stage"><small>Stage 9D · framework ready</small><h3>Training calibration</h3><p>A training-only objective and observation-parameter profiling framework are implemented. No empirical parameter fit has been run because canonical observations have not yet been promoted.</p></article>
+    <article class="stage"><small>Stage 9E · framework ready</small><h3>Held-out validation</h3><p>Frozen-fit MAE/RMSE/bias scoring and persistence/linear-trend comparisons are implemented. Validation remains closed until a Stage 9D fit is frozen.</p></article>
+  </div>
+  <div class="notice"><strong>Current boundary:</strong> zero dynamic parameters are calibrated and zero held-out validation results exist. The next substantive step is reviewed canonical data promotion, followed by rerunning identifiability on the actual training design before opening Stage 9D.</div>
+</div></section>
+
 <section id="stage-10" class="section"><div class="wrap">
   <p class="eyebrow">Stage 10 · planned after Stage 9</p>
   <h2>Historical Evidence & Reconstruction Validation</h2>
